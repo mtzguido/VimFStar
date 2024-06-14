@@ -126,6 +126,8 @@ syn region   fstarMPRestr1 matchgroup=fstarModule start="\ssig\s\=" matchgroup=f
 syn region   fstarMPRestr2 start="\sfunctor\(\s\|(\)\="me=e-1 matchgroup=fstarKeyword end="->" contained contains=@fstarAllErrs,fstarComment,fstarCommentLine,fstarModParam skipwhite skipempty nextgroup=fstarFuncWith,fstarMPRestr2
 syn match    fstarMPRestr3 "\w\(\w\|'\)*\( *\. *\w\(\w\|'\)*\)*" contained
 syn match    fstarModPreRHS "=" contained skipwhite skipempty nextgroup=fstarModParam,fstarFullMod
+syn keyword  fstarKeyword instance
+syn keyword  fstarKeyword class
 syn keyword  fstarKeyword val
 syn region   fstarVal matchgroup=fstarKeyword start="\<val\>" matchgroup=fstarLCIdentifier end="\<\l\(\w\|'\)*\>" contains=@fstarAllErrs,fstarComment,fstarCommentLine,fstarFullMod skipwhite skipempty nextgroup=fstarMPRestr
 syn region   fstarModRHS start="." end=". *\w\|([^*]"me=e-2 contained contains=fstarComment,fstarCommentLine skipwhite skipempty nextgroup=fstarModParam,fstarFullMod
